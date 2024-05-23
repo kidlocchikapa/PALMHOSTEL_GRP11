@@ -7,22 +7,22 @@ const Cards = () => {
       <Card
         icon={<FaBed size={50} />}
         title="Find your uni-home"
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        description="Find your university accomodation easily when left in campus."
         href="#"
       />
       <Card
         icon={<FaBullhorn size={50} />}
         title="Advertise your hostel for free"
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        description="Landlords student bridge for hostels.sell them quick!."
         href="#"
       />
       <Card icon={<FaHome size={50} />} title="Hostels"
-       description="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+       description="Check all hostels by a single tap with palmHostel."
         href="#" />
       <Card
         icon={<FaInfoCircle size={50} />}
         title="About Us"
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        description="Know more about PalmHostel your altenate patner."
         href="#"
       />
     </div>
