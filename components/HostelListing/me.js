@@ -15,14 +15,8 @@ const Navbar = () => {
   };
 
   return (
-    
-       <nav className="bg-gray-200 text-black relative" style={{
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        width: '100%',
-        zIndex: 10
-      }}>
+    <Router>
+      <nav className="bg-gray-200 text-black relative">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center">
@@ -41,7 +35,7 @@ const Navbar = () => {
                     className="inline-flex items-center hover:text-white"
                     onClick={toggleHostelsDropdown}
                   >
-                    Hostels
+                    All Hostels
                     <svg
                       className="ml-2 h-5 w-5"
                       xmlns="http://www.w3.org/2000/svg"
@@ -177,7 +171,7 @@ const Navbar = () => {
             }
         </div>
       </nav>
-    
+    </Router>
   );
 };
 
