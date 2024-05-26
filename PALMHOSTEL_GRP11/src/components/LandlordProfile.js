@@ -80,13 +80,6 @@ const LandlordProfile = () => {
       <div className="bg-white p-6 rounded-lg shadow-md w-80">
         <h2 className="text-2xl font-bold mb-6 text-center text-gray-800">Landlord Profile</h2>
         {alertMessage && <p className={`alert ${isFormFilled ? 'error' : ''}`}>{alertMessage}</p>}
-        <div className="profile-image mb-4">
-          <img
-            src= {tiwo}
-            alt="Profile"
-            className="w-24 h-24 rounded-full mx-auto"
-          />
-        </div>
         <p className="text-center text-gray-600 mb-4">Please sign in to use the full functionality of the application. Thank you!</p>
         <form onSubmit={handleSubmit} className="flex flex-col">
           <label className="block text-sm font-medium text-gray-700 mb-1">First Name</label>
