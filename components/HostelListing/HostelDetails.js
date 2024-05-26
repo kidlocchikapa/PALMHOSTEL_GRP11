@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 const HostelDetails = () => {
   const { hostelName } = useParams();
 
-  // Find the hostel data based on the hostelName parameter
+  
   const hostel = hostel.find((h) => h.name.replace(/\s/g, '-').toLowerCase() === hostelName);
 
   if (!hostel) {

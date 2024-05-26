@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter, Link } from 'react-router-dom';
 import Slider from './Slider';
 import AllHostels from './AllHostels';
 
@@ -88,13 +89,15 @@ const HostelCards = () => {
   ];
 
   return (
-    <div className="container mx-auto px-1 p-2 h-full">
-      <h2 className="text-4xl font-bold mb-4 p-1">Recent Hostels</h2>
-      <Slider hostels={hostels} />
+    <BrowserRouter>
+      <div className="container mx-auto px-1 p-2 h-full">
+        <h2 className="text-4xl font-bold mb-4 p-1">Recent Hostels</h2>
+        <Slider hostels={hostels} />
 
-      <h2 className="text-4xl font-bold mb-4 p-1">All Hostels</h2>
-      <AllHostels hostels={hostels} />
-    </div>
+        <h2 className="text-4xl font-bold mb-4 p-1">All Hostels</h2>
+        <AllHostels hostels={hostels} />
+      </div>
+    </BrowserRouter>
   );
 };
 
