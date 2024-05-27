@@ -1,6 +1,7 @@
 import React from 'react';
 import person from './person.jpg';
 
+
 function App() {
   return (
     <div className="bg-gray-100 flex items-center justify-center min-h-screen">

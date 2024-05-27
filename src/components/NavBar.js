@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { BrowserRouter as Router } from 'react-router-dom';
+
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,13 +16,7 @@ const Navbar = () => {
 
   return (
     
-       <nav className="bg-gray-200 text-black relative" style={{
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        width: '100%',
-        zIndex: 10
-      }}>
+      <nav className="bg-gray-200 text-black relative">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center">
@@ -32,7 +26,7 @@ const Navbar = () => {
             </div>
             <div className="hidden md:flex ml-auto">
               <div className="flex items-baseline space-x-4">
-                <Link to="/" className="hover:text-white">
+                <Link to="/home" className="hover:text-white">
                   Home
                 </Link>
                 <div className="relative">
@@ -41,7 +35,7 @@ const Navbar = () => {
                     className="inline-flex items-center hover:text-white"
                     onClick={toggleHostelsDropdown}
                   >
-                    Hostels
+                    All Hostels
                     <svg
                       className="ml-2 h-5 w-5"
                       xmlns="http://www.w3.org/2000/svg"
@@ -59,7 +53,7 @@ const Navbar = () => {
                   {showHostelsDropdown && (
                     <div className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none z-10">
                       <Link
-                        to="/all-hostels"
+                        to="/HostelCards"
                         className="block px-4 py-2 text-sm text-black hover:bg-gray-100 hover:text-white"
                       >
                         All Hostels
@@ -79,11 +73,15 @@ const Navbar = () => {
                     </div>
                   )}
                 </div>
-                <Link to="/landlord-portal" className="hover:text-white">
+                <Link to="/landlord-profile"
+                className="hover:text-white">
+                  
                   LandlordPortal
                 </Link>
-                <Link to="/about-us" className="hover:text-white">
-                  AboutUs
+                <Link to="/about-us"
+                className="hover:text-white"
+                >About Us
+                  
                 </Link>
               </div>
             </div>

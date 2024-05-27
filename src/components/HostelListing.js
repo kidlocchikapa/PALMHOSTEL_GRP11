@@ -1,13 +1,20 @@
 import React from 'react';
-import house from './house.jpg'
+import { Link, useNavigate } from 'react-router-dom';
+import house from './house.jpg';
 
 const HostelListing = () => {
+  const navigate = useNavigate();
+
+  const handleMessageOwnerClick = () => {
+    navigate('/ContactOwner');
+  };
+
   return (
     <div className="bg-gray-200 flex items-center justify-center min-h-screen">
       <div className="bg-white rounded-lg shadow-lg w-96">
         <div>
           <img
-            src= {house}
+            src={house}
             alt="Hostel"
             className="w-full rounded-t-lg"
           />
@@ -27,9 +34,11 @@ const HostelListing = () => {
               environment for education.</p>
           </div>
           <div className="text-center mt-4">
-            <button className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700">
+            <Link to="/ContactOwner">
+            <button onClick={handleMessageOwnerClick} className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700">
               Message The Owner
             </button>
+            </Link>
           </div>
         </div>
       </div>
@@ -38,4 +47,3 @@ const HostelListing = () => {
 };
 
 export default HostelListing;
-

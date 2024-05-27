@@ -1,9 +1,10 @@
 import React from 'react';
-import LandlordImage from './LandlandlordaccountmanagementlordImage.jpg';
+import LandlordImage from './LandlordImage.jpg';
 
 const LandlordProfile = ({ profile }) => {
   return (
-    <div className="flex flex-col items-center p-4 bg-gray-300 rounded-lg mb-6">
+    <div className="flex flex-col items-center p-2 bg-gray-300 rounded-lg mb-6"
+      >
       <img 
         src={LandlordImage}
         alt="Profile" 

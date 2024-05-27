@@ -1,39 +1,41 @@
-import React, { useState } from 'react';
-import tiwo from './tiwo.jpg'
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import tiwo from "./tiwo.jpg";
 
 const LandlordProfiles = () => {
   const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: ''
+    firstName: "",
+    lastName: "",
+    email: "",
   });
 
-  const [alertMessage, setAlertMessage] = useState('');
+  const [alertMessage, setAlertMessage] = useState("");
   const [isFormFilled, setIsFormFilled] = useState(false);
+  const navigate = useNavigate();
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
-      [name]: value
+      [name]: value,
     });
   };
 
   const handleUploadDoc = () => {
-    document.getElementById('fileInput').click();
+    document.getElementById("fileInput").click();
   };
 
   const handleFileChange = (e) => {
     const selectedFile = e.target.files[0];
-    console.log('Selected file:', selectedFile);
+    console.log("Selected file:", selectedFile);
   };
 
   const handleRequestReview = async () => {
     try {
-      const response = await fetch('https://your-api.com/review', {
-        method: 'POST',
+      const response = await fetch("https://your-api.com/review", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
           firstName: formData.firstName,
@@ -43,20 +45,21 @@ const LandlordProfiles = () => {
       });
 
       if (response.ok) {
-        console.log('Review request sent successfully');
+        console.log("Review request sent successfully");
         setFormData({
-          firstName: '',
-          lastName: '',
-          email: ''
+          firstName: "",
+          lastName: "",
+          email: "",
         });
-        setAlertMessage('Review request sent successfully');
+        setAlertMessage("Review request sent successfully");
+        navigate("/landlord-dashboard");
       } else {
-        console.error('Failed to send review request');
-        setAlertMessage('Failed to send review request');
+        console.error("Failed to send review request");
+        setAlertMessage("Failed to send review request");
       }
     } catch (error) {
-      console.error('Error sending review request:', error);
-      setAlertMessage('Error sending review request');
+      console.error("Error sending review request:", error);
+      setAlertMessage("Error sending review request");
     }
   };
 
@@ -66,8 +69,7 @@ const LandlordProfiles = () => {
       handleRequestReview();
     } else {
       setIsFormFilled(true);
-      setAlertMessage('Please fill in all fields.');
-
+      setAlertMessage("Please fill in all fields.");
     }
   };
 
@@ -76,20 +78,24 @@ const LandlordProfiles = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+    <div className="flex items-center justify-center min-h-screen bg-gray-100 mt-2">
       <div className="bg-white p-6 rounded-lg shadow-md w-80">
-        <h2 className="text-2xl font-bold mb-6 text-center text-gray-800">Landlord Profile</h2>
-        {alertMessage && <p className={`alert ${isFormFilled ? 'error' : ''}`}>{alertMessage}</p>}
-        <div className="profile-image mb-4">
-          <img
-            src= {tiwo}
-            alt="Profile"
-            className="w-24 h-24 rounded-full mx-auto"
-          />
-        </div>
-        <p className="text-center text-gray-600 mb-4">Please sign in to use the full functionality of the application. Thank you!</p>
+        <h2 className="text-2xl font-bold mb-6 text-center text-gray-800">
+          Landlord Profile
+        </h2>
+        {alertMessage && (
+          <p className={`alert ${isFormFilled ? "error" : ""}`}>
+            {alertMessage}
+          </p>
+        )}
+        <p className="text-center text-gray-600 mb-4">
+          Please sign in to use the full functionality of the application. Thank
+          you!
+        </p>
         <form onSubmit={handleSubmit} className="flex flex-col">
-          <label className="block text-sm font-medium text-gray-700 mb-1">First Name</label>
+          <label className="block text-sm font-medium text-gray-700 mb-1">
+            First Name
+          </label>
           <input
             type="text"
             name="firstName"
@@ -99,7 +105,9 @@ const LandlordProfiles = () => {
             required
             className="mb-4 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500"
           />
-          <label className="block text-sm font-medium text-gray-700 mb-1">Last Name</label>
+          <label className="block text-sm font-medium text-gray-700 mb-1">
+            Last Name
+          </label>
           <input
             type="text"
             name="lastName"
@@ -109,7 +117,9 @@ const LandlordProfiles = () => {
             required
             className="mb-4 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500"
           />
-          <label className="block text-sm font-medium text-gray-700 mb-1">Email</label>
+          <label className="block text-sm font-medium text-gray-700 mb-1">
+            Email
+          </label>
           <input
             type="email"
             name="email"
@@ -123,7 +133,7 @@ const LandlordProfiles = () => {
             id="fileInput"
             type="file"
             onChange={handleFileChange}
-            style={{ display: 'none' }}
+            style={{ display: "none" }}
           />
           <div className="flex justify-between">
             <button
@@ -139,7 +149,7 @@ const LandlordProfiles = () => {
               disabled={isUploadDisabled()}
               className="px-4 py-2 bg-green-600 text-white font-semibold rounded-md shadow-sm hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
             >
-              submit
+              Submit
             </button>
           </div>
         </form>
