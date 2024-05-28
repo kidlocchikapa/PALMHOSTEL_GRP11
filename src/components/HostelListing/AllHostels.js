@@ -6,7 +6,7 @@ const AllHostels = ({ hostels }) => {
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
       {hostels.map((hostel, index) => (
         <Link
-          to={`/hostels/${hostel.name.replace(/\s/g, '-').toLowerCase()}`}
+          to={"/hostels/view"}
           key={index}
           className="bg-gray-100 rounded-lg shadow-md"
         >

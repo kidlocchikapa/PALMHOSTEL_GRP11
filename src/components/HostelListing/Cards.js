@@ -8,22 +8,22 @@ const Cards = () => {
         icon={<FaBed size={50} />}
         title="Find your uni-home"
         description="Find your university accomodation easily when left in campus."
-        href="#"
+        
       />
       <Card
         icon={<FaBullhorn size={50} />}
         title="Advertise your hostel for free"
         description="Landlords student bridge for hostels.sell them quick!."
-        href="#"
+        
       />
       <Card icon={<FaHome size={50} />} title="Hostels"
        description="Check all hostels by a single tap with palmHostel."
-        href="#" />
+        href="/All-hostels" />
       <Card
         icon={<FaInfoCircle size={50} />}
         title="About Us"
         description="Know more about PalmHostel your altenate patner."
-        href="#"
+        href="/about-us"
       />
     </div>
   );

@@ -53,23 +53,12 @@ const Navbar = () => {
                   {showHostelsDropdown && (
                     <div className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none z-10">
                       <Link
-                        to="/HostelCards"
+                        to="/All-hostels"
                         className="block px-4 py-2 text-sm text-black hover:bg-gray-100 hover:text-white"
                       >
                         All Hostels
                       </Link>
-                      <Link
-                        to="/all-hostels/boys"
-                        className="block px-4 py-2 text-sm text-black hover:bg-gray-100 hover:text-white"
-                      >
-                        Boys Hostels
-                      </Link>
-                      <Link
-                        to="/all-hostels/girls"
-                        className="block px-4 py-2 text-sm text-black hover:bg-gray-100 hover:text-white"
-                      >
-                        Girls Hostels
-                      </Link>
+                     
                     </div>
                   )}
                 </div>

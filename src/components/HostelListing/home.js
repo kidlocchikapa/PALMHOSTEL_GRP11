@@ -108,7 +108,7 @@ const HomePageHero = () => {
               placeholder="Search hostel"
               value={searchText}
               onChange={handleSearchChange}
-              className="w-full px-4 py-2 rounded-md border border-black bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-4 py-2 rounded-md border border-black text-blue-700 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
             <button className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 mt-2">
               Search

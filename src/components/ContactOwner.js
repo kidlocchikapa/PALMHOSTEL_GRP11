@@ -2,7 +2,7 @@ import React from 'react';
 import person from './person.jpg';
 
 
-function App() {
+export default function ContactOwner() {
   return (
     <div className="bg-gray-100 flex items-center justify-center min-h-screen">
       <div className="bg-white p-6 rounded-lg shadow-lg text-center">
@@ -22,5 +22,3 @@ function App() {
     </div>
   );
 }
-
-export default App;

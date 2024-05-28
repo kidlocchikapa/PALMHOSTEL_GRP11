@@ -34,7 +34,7 @@ const HostelListing = () => {
               environment for education.</p>
           </div>
           <div className="text-center mt-4">
-            <Link to="/ContactOwner">
+            <Link to="/contactOwner">
             <button onClick={handleMessageOwnerClick} className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700">
               Message The Owner
             </button>

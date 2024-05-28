@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function HostelUp() {
   const [file, setFile] = useState(null);
@@ -11,6 +12,7 @@ function HostelUp() {
   const [progress, setProgress] = useState({ started: false, pc: 0 });
   const [msg, setMsg] = useState(null);
   const [isFileInputDisabled, setIsFileInputDisabled] = useState(false); // New state for disabling file input
+  const navigate = useNavigate();
 
   function handleUpload() {
     if (!file) {
@@ -119,7 +121,8 @@ function HostelUp() {
       </div>
 
       <button
-        onClick={handleUpload}
+        onClick={() => navigate('/dashboard')}
+
         className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
       >
         Upload

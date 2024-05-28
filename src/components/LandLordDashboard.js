@@ -12,8 +12,8 @@ const Sidebar = ({ profile }) => {
             <p className="text-center text-sm">{profile.phone}</p>
           </div>
           <nav className="mt-10">
-            <Link to="/hostel-upload" className="block py-2.5 px-4 rounded hover:bg-gray-700">Add Hostel</Link>
-            <Link to="/logout" className="block py-2.5 px-4 rounded hover:bg-gray-700">Logout</Link>
+            <Link to="/hostel-upload" className="block py-2.5 px-4 rounded text-center hover:bg-gray-700">Add Hostel</Link>
+            <Link to="/logout" className="block py-2.5 px-4 rounded text-center hover:bg-gray-700">Logout</Link>
           </nav>
         </div>
         <div className="p-5">
