@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 function HostelUp() {
@@ -30,28 +29,6 @@ function HostelUp() {
     setMsg("Uploading...");
     setProgress((prevState) => ({ ...prevState, started: true }));
 
-    axios
-      .post("http://httpbin.org/post", fd, {
-        onUploadProgress: (progressEvent) => {
-          setProgress((prevState) => ({
-            ...prevState,
-            pc: (progressEvent.loaded / progressEvent.total) * 100,
-          }));
-        },
-        headers: {
-          "Custom-Header": "value",
-        },
-      })
-      .then((res) => {
-        setMsg("Upload successful");
-        setImageUrl(URL.createObjectURL(file));
-        setIsFileInputDisabled(true); // Disable file input on successful upload
-        console.log(res.data);
-      })
-      .catch((err) => {
-        setMsg("Upload failed");
-        console.error(err);
-      });
   }
 
   return (
